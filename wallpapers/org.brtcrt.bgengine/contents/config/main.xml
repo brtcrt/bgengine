@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+      http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
+  <kcfgfile name=""/>
+
+  <group name="General">
+    <entry name="SourceMode" type="String">
+      <label>Primary background source</label>
+      <default>shader</default>
+    </entry>
+    <entry name="ShaderMode" type="String">
+      <label>Shader compatibility mode</label>
+      <default>shadertoy</default>
+    </entry>
+    <entry name="ImageSource" type="String">
+      <label>Image source URL</label>
+      <default></default>
+    </entry>
+    <entry name="VideoSource" type="String">
+      <label>Video source URL</label>
+      <default></default>
+    </entry>
+    <entry name="FpsCap" type="Int">
+      <label>Maximum render frames per second</label>
+      <default>60</default>
+      <min>1</min>
+      <max>240</max>
+    </entry>
+    <entry name="PostProcessEnabled" type="Bool">
+      <label>Apply post-processing shader</label>
+      <default>false</default>
+    </entry>
+    <entry name="MouseUniforms" type="Bool">
+      <label>Expose pointer state to shaders</label>
+      <default>true</default>
+    </entry>
+    <entry name="EffectOpacity" type="Double">
+      <label>Shader opacity</label>
+      <default>1.0</default>
+      <min>0.0</min>
+      <max>1.0</max>
+    </entry>
+    <entry name="FillMode" type="Int">
+      <label>Image fill mode</label>
+      <default>2</default>
+    </entry>
+  </group>
+</kcfg>
