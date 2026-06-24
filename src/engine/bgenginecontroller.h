@@ -13,6 +13,7 @@ class BgEngineController : public QObject
     Q_OBJECT
     QML_ELEMENT
 
+    // This is mostly just state QML needs to pass into the shaders i think
     Q_PROPERTY(QString sourceMode READ sourceMode WRITE setSourceMode NOTIFY sourceModeChanged FINAL)
     Q_PROPERTY(QString shaderMode READ shaderMode WRITE setShaderMode NOTIFY shaderModeChanged FINAL)
     Q_PROPERTY(QString imageSource READ imageSource WRITE setImageSource NOTIFY imageSourceChanged FINAL)

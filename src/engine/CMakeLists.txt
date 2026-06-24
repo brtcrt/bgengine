@@ -12,6 +12,7 @@ qt_add_qml_module(bgengineengine
     QML_FILES
         qml/BgEngineView.qml
         qml/MediaLayer.qml
+        qml/NoiseTexture.qml
         qml/ShaderSurface.qml
 )
 

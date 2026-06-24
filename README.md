@@ -15,6 +15,8 @@ cmake --build build
 ./build/bin/bgengine-preview
 ```
 
+The preview app can import images, videos, Qt shader binaries (`.qsb`), and local GLSL shader sources (`.frag`/`.vert`). GLSL sources are compiled to `.qsb` in the user cache with `qsb-qt6` before previewing. Shadertoy-style fragment snippets with `mainImage`, `iTime`, `iResolution`, `iMouse`, or `iChannel0` are wrapped automatically for Qt Shader Tools. There is probably a better way to implement shadertoy shaders but I couldn't figure it out.
+
 ## Install Plasma wallpaper locally
 
 ```sh

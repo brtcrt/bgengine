@@ -11,6 +11,9 @@ WallpaperItem {
         shaderMode: root.configuration.ShaderMode
         imageSource: root.configuration.ImageSource
         videoSource: root.configuration.VideoSource
+        vertexShader: root.configuration.VertexShader
+        fragmentShader: root.configuration.FragmentShader
+        postProcessShader: root.configuration.PostProcessShader
         fpsCap: root.configuration.FpsCap
         postProcessEnabled: root.configuration.PostProcessEnabled
         mouseUniforms: root.configuration.MouseUniforms

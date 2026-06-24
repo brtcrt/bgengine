@@ -6,6 +6,9 @@ qt_add_qml_module(bgengine-preview
     URI BgEnginePreview
     VERSION 1.0
     RESOURCE_PREFIX /
+    SOURCES
+        previewapplier.cpp
+        previewapplier.h
     QML_FILES
         qml/Main.qml
 )
@@ -16,6 +19,7 @@ target_link_libraries(bgengine-preview
     PRIVATE
         bgengineengine
         Qt6::Core
+        Qt6::DBus
         Qt6::Gui
         Qt6::Qml
         Qt6::Quick
@@ -23,6 +27,7 @@ target_link_libraries(bgengine-preview
 
 target_compile_definitions(bgengine-preview
     PRIVATE
+        BGENGINE_PLUGIN_ID="${BGENGINE_ID}"
         BGENGINE_BUILD_IMPORT_PATH="${CMAKE_BINARY_DIR}/src/engine"
 )
 

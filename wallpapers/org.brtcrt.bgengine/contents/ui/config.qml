@@ -12,6 +12,9 @@ Kirigami.FormLayout {
     property string cfg_ShaderMode: "shadertoy"
     property alias cfg_ImageSource: imageSource.text
     property alias cfg_VideoSource: videoSource.text
+    property alias cfg_VertexShader: vertexShader.text
+    property alias cfg_FragmentShader: fragmentShader.text
+    property alias cfg_PostProcessShader: postProcessShader.text
     property alias cfg_FpsCap: fpsCap.value
     property alias cfg_PostProcessEnabled: postProcess.checked
     property alias cfg_MouseUniforms: mouseUniforms.checked
@@ -65,6 +68,24 @@ Kirigami.FormLayout {
         id: videoSource
         Kirigami.FormData.label: i18n("Video URL:")
         placeholderText: i18n("file:///path/to/video.mp4")
+    }
+
+    QQC2.TextField {
+        id: vertexShader
+        Kirigami.FormData.label: i18n("Vertex shader:")
+        placeholderText: i18n("qrc:/bgengine/shaders/fullscreen.vert.qsb")
+    }
+
+    QQC2.TextField {
+        id: fragmentShader
+        Kirigami.FormData.label: i18n("Fragment shader:")
+        placeholderText: i18n("file:///path/to/shader.frag.qsb")
+    }
+
+    QQC2.TextField {
+        id: postProcessShader
+        Kirigami.FormData.label: i18n("Post shader:")
+        placeholderText: i18n("qrc:/bgengine/shaders/postprocess.frag.qsb")
     }
 
     QQC2.SpinBox {

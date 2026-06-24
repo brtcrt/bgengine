@@ -95,6 +95,7 @@ void BgEngineController::setPaused(bool paused)
         return;
     }
 
+    // Freeze iTime while paused, then keep counting from the same value.
     if (paused) {
         m_pausedAt = time();
     } else {
@@ -194,6 +195,7 @@ QVector4D BgEngineController::iMouse() const
         return {};
     }
 
+    // Shadertoy wants mouse y from the bottom, but Qt uses top left origin
     const qreal y = qMax<qreal>(0.0, m_renderSize.height() - m_mousePosition.y());
     const qreal pressY = qMax<qreal>(0.0, m_renderSize.height() - m_lastPressedPosition.y());
     const qreal sign = m_mousePressed ? 1.0 : -1.0;
@@ -207,6 +209,7 @@ QVector4D BgEngineController::iMouse() const
 
 int BgEngineController::frameIntervalMs() const
 {
+    // The QML Timer uses milliseconds, so convert the FPS cap here.
     return qMax(1, qRound(1000.0 / static_cast<qreal>(m_fpsCap)));
 }
 
@@ -216,6 +219,7 @@ void BgEngineController::advanceFrame()
         return;
     }
 
+    // Shaders use this as iFrame.
     ++m_frame;
     Q_EMIT frameTick();
 }

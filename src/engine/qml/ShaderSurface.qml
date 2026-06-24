@@ -7,6 +7,10 @@ ShaderEffect {
     required property BgEngineController engine
 
     property variant sourceTexture
+    property variant iChannel0
+    property variant iChannel1
+    property variant iChannel2
+    property variant iChannel3
     property real iTime: engine.time
     property int iFrame: engine.frame
     property vector3d iResolution: Qt.vector3d(Math.max(width, 1), Math.max(height, 1), 1)

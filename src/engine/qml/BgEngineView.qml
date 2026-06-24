@@ -31,6 +31,10 @@ Item {
         renderSize: Qt.size(root.width, root.height)
     }
 
+    NoiseTexture {
+        id: defaultChannelTexture
+    }
+
     Timer {
         interval: engine.frameIntervalMs()
         repeat: true
@@ -55,6 +59,10 @@ Item {
         vertexShader: root.vertexShader
         fragmentShader: root.fragmentShader
         engine: engine
+        iChannel0: defaultChannelTexture.texture
+        iChannel1: defaultChannelTexture.texture
+        iChannel2: defaultChannelTexture.texture
+        iChannel3: defaultChannelTexture.texture
         effectOpacity: root.effectOpacity
     }
 
@@ -64,6 +72,10 @@ Item {
         vertexShader: root.vertexShader
         fragmentShader: root.postProcessShader
         engine: engine
+        iChannel0: defaultChannelTexture.texture
+        iChannel1: defaultChannelTexture.texture
+        iChannel2: defaultChannelTexture.texture
+        iChannel3: defaultChannelTexture.texture
         sourceTexture: ShaderEffectSource {
             sourceItem: root.sourceMode === "shader" ? shaderSurface : mediaLayer
             hideSource: false
@@ -73,6 +85,7 @@ Item {
         effectOpacity: root.effectOpacity
     }
 
+    // I doubt these work btw didn't bother checking
     HoverHandler {
         id: hoverHandler
         enabled: root.mouseUniforms

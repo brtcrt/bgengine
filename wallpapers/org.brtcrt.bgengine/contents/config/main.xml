@@ -22,6 +22,18 @@
       <label>Video source URL</label>
       <default></default>
     </entry>
+    <entry name="VertexShader" type="String">
+      <label>Vertex shader URL</label>
+      <default>qrc:/bgengine/shaders/fullscreen.vert.qsb</default>
+    </entry>
+    <entry name="FragmentShader" type="String">
+      <label>Fragment shader URL</label>
+      <default>qrc:/bgengine/shaders/shadertoy.frag.qsb</default>
+    </entry>
+    <entry name="PostProcessShader" type="String">
+      <label>Post-processing shader URL</label>
+      <default>qrc:/bgengine/shaders/postprocess.frag.qsb</default>
+    </entry>
     <entry name="FpsCap" type="Int">
       <label>Maximum render frames per second</label>
       <default>60</default>
