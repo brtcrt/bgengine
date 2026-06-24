@@ -15,7 +15,9 @@ cmake --build build
 ./build/bin/bgengine-preview
 ```
 
-The preview app can import images, videos, Qt shader binaries (`.qsb`), and local GLSL shader sources (`.frag`/`.vert`). GLSL sources are compiled to `.qsb` in the user cache with `qsb-qt6` before previewing. Shadertoy-style fragment snippets with `mainImage`, `iTime`, `iResolution`, `iMouse`, or `iChannel0` are wrapped automatically for Qt Shader Tools. There is probably a better way to implement shadertoy shaders but I couldn't figure it out.
+The preview app can import images, videos, Qt shader binaries (qsb) and local GLSL shader sources (frag/vert). GLSL sources are compiled to qsb in the user cache with `qsb-qt6` in order to preview. Shadertoy fragment snippets are converted automatically for Qt Shader Tools and baked into qsb. There is probably a better way to implement shadertoy shaders but I couldn't figure it out.
+
+There are some example shaders under the /wallpapers directory which I used for testing.
 
 ## Install Plasma wallpaper locally
 
@@ -23,14 +25,14 @@ The preview app can import images, videos, Qt shader binaries (`.qsb`), and loca
 cmake --install build --prefix "$HOME/.local"
 ```
 
-The wallpaper package installs to `$HOME/.local/share/plasma/wallpapers`, which Plasma can discover through XDG data paths. The native `BgEngine` QML module installs to `$HOME/.local/lib64/qt6/qml`
+The wallpaper package installs to `$HOME/.local/share/plasma/wallpapers` which Plasma can discover through XDG data paths.
 
 ```sh
 export QML2_IMPORT_PATH="$HOME/.local/lib64/qt6/qml${QML2_IMPORT_PATH:+:$QML2_IMPORT_PATH}"
 plasmashell --replace
 ```
 
-After installing or changing the import environment, restart Plasma Shell or log out and back in, then select `BgEngine` from desktop wallpaper settings.
+After installing or changing the import environment, restart Plasma Shell or log out and back in then select `BgEngine` from desktop wallpaper settings.
 
 ## Architecture
 
