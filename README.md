@@ -19,6 +19,8 @@ The preview app can import images, videos, Qt shader binaries (qsb) and local GL
 
 There are some example shaders under the /wallpapers directory which I used for testing.
 
+![Demo gif](/assets/demo.gif)
+
 ## Install Plasma wallpaper locally
 
 ```sh
